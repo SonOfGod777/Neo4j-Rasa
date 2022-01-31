@@ -1,0 +1,19 @@
+{
+
+  "relation": {
+    "belongs_to": "Department",
+    "need_check": "Check",
+    "has_symptom": "Symptom",
+    "acompany_with": "Disease"},
+
+
+  "com_relation":
+  {
+    "Drug": ["recommand_drug", "common_drug"],
+    "Food": ["recommand_eat", "do_eat"]
+  },
+
+
+  "attribute": ["desc", "prevent", "cause", "easy_get", "cure_department", "cure_way", "cure_lasttime", "symptom", "cured_prob"]
+
+}

@@ -1,0 +1,28 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: zh
+pipeline:
+  - name: "JiebaTokenizer"
+  - name: "CountVectorsFeaturizer"
+#    token_pattenr: (?u)\b\w+\b
+  - name: "EmbeddingIntentClassifier"
+
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+
+policies:
+  - name: EmbeddingPolicy
+    max_history: 10
+    epochs: 20
+    batch_size:
+      - 32
+      - 64
+  - name: FallbackPolicy
+    nlu_threshold: 0
+    core_threshold: 0.3
+    fallback_action_name: 'defualt_action'
+  - name: MemoizationPolicy
+    max_history: 10
+
+
